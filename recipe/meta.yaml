@@ -32,11 +32,11 @@ test:
 
 about:
   home: https://github.com/ionelmc/pytest-benchmark
-  license: BSD 2-clause
+  license: BSD-2-clause
   license_file: LICENSE
   summary: "A py.test fixture for benchmarking code"
 
 extra:
   recipe-maintainers:
-    - juanlu001
+    - astrojuanlu
     - esloch
