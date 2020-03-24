@@ -37,6 +37,6 @@ about:
   summary: "A py.test fixture for benchmarking code"
 
 extra:
-    recipe-maintainers:
-        - juanlu001
-        - esloch
+  recipe-maintainers:
+    - juanlu001
+    - esloch
