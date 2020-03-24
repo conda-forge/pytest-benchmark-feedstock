@@ -20,9 +20,7 @@ requirements:
 
   run:
     - python
-    #- setuptools
     - pytest >=2.6
-    - statistics  # [py<34]
     - py-cpuinfo
 
 test:
