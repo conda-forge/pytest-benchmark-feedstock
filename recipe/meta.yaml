@@ -1,27 +1,29 @@
+{% set name = "pytest-benchmark" %}
 {% set version = "3.4.1" %}
 
 package:
-  name: pytest-benchmark
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: pytest-benchmark-{{ version }}.zip
-  url: https://pypi.python.org/packages/source/p/pytest-benchmark/pytest-benchmark-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 40e263f912de5a81d891619032983557d62a3d85843f9a9f30b98baea0cd7b47
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  entry_points:
+    - py.test-benchmark = pytest_benchmark.cli:main
+    - pytest-benchmark = pytest_benchmark.cli:main
 
 requirements:
   host:
     - python >=3.5
     - pip
-
   run:
     - python >=3.5
-    - pytest >=2.6
+    - pytest >=3.8
     - py-cpuinfo
 
 test:
@@ -29,6 +31,8 @@ test:
     - pytest_benchmark
   commands:
     - py.test --traceconfig | grep pytest-benchmark-{{ version }}
+    - pytest-benchmark --help
+    - py.test-benchmark --help
 
 about:
   home: https://github.com/ionelmc/pytest-benchmark
