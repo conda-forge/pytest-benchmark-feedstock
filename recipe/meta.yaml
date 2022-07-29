@@ -13,12 +13,14 @@ build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
+  entry_points:
+    - py.test-benchmark = pytest_benchmark.cli:main
+    - pytest-benchmark = pytest_benchmark.cli:main
 
 requirements:
   host:
     - python >=3.5
     - pip
-
   run:
     - python >=3.5
     - pytest >=2.6
@@ -29,6 +31,8 @@ test:
     - pytest_benchmark
   commands:
     - py.test --traceconfig | grep pytest-benchmark-{{ version }}
+    - pytest-benchmark --help
+    - py.test-benchmark --help
 
 about:
   home: https://github.com/ionelmc/pytest-benchmark
