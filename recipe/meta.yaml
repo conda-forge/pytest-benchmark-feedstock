@@ -1,5 +1,5 @@
 {% set name = "pytest-benchmark" %}
-{% set version = "4.0.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fb0785b83efe599a6a956361c0691ae1dbb5318018561af10f3e915caa0048d1
+  sha256: cd0adf68516eea7ac212b78a7eb6fc3373865507de8562bb3bfff2f2f852cc63
 
 build:
   number: 0
