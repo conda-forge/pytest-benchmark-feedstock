@@ -10,7 +10,7 @@ source:
   sha256: 9ea661cdc292e8231f7cd4c10b0319e56a2118e2c09d9f50e1b3d150d2aca105
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -24,7 +24,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - pytest >=3.8
+    - pytest >=8.1
     - py-cpuinfo
 
 test:
