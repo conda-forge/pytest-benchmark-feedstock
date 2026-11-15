@@ -29,10 +29,12 @@ requirements:
 
 test:
   requires:
+    - pip
     - python {{ python_min }}
   imports:
     - pytest_benchmark
   commands:
+    - pip check
     - py.test --traceconfig | grep pytest-benchmark-{{ version }}
     - pytest-benchmark --help
     - py.test-benchmark --help
